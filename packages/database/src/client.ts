@@ -1,7 +1,6 @@
 import { PrismaPg } from '@prisma/adapter-pg'
 import { Prisma, PrismaClient } from './prisma/generated/prisma/client';
 export { PrismaClient, Prisma }
-import { enhance } from '@zenstackhq/runtime';
 export type PrismaSuperClient = Prisma.DefaultPrismaClient
 export type PrismaExtension = ReturnType<typeof Prisma.defineExtension>
 export type GetPrismaClientParams = {
@@ -18,7 +17,6 @@ export function getPrismaClient({ connectionString, extensions }: GetPrismaClien
   })
   let prisma = new PrismaClient({ adapter: pool }) as unknown as Prisma.DefaultPrismaClient
 
-  const enhancedPrisma = enhance(prisma)
   if (extensions && extensions.length > 0) {
     for (const entry of extensions) {
       prisma = prisma.$extends(entry) as unknown as Prisma.DefaultPrismaClient
