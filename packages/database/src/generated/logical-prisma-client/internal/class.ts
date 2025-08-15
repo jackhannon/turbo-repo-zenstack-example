@@ -22,7 +22,7 @@ const config: runtime.GetPrismaClientConfig = {
       "value": "prisma-client"
     },
     "output": {
-      "value": "C:\\Users\\Jack\\projects\\composabl-sample\\app.composabl.io\\packages\\database\\src\\generated\\logical-prisma-client",
+      "value": "C:\\Users\\Jack\\projects\\composabl-sample\\turbo-repo-zenstack-example\\packages\\database\\src\\generated\\logical-prisma-client",
       "fromEnvVar": null
     },
     "config": {
@@ -41,7 +41,7 @@ const config: runtime.GetPrismaClientConfig = {
       "relationJoins",
       "views"
     ],
-    "sourceFilePath": "C:\\Users\\Jack\\projects\\composabl-sample\\app.composabl.io\\packages\\database\\src\\logical-1755240718612.prisma",
+    "sourceFilePath": "C:\\Users\\Jack\\projects\\composabl-sample\\turbo-repo-zenstack-example\\packages\\database\\src\\logical-1755242194835.prisma",
     "isCustomOutput": true
   },
   "relativePath": "../..",
