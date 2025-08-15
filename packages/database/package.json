@@ -1,0 +1,52 @@
+{
+  "name": "@sample/database",
+  "version": "1.1.0",
+  "description": "Supabase types and migrations",
+  "main": "./src/index.js",
+  "module": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./client": "./src/client.ts",
+    "./access": "./src/access/index.ts"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "src/*"
+      ],
+      "client": [
+        "src/client.ts"
+      ],
+      "access": [
+        "src/access/index.ts"
+      ]
+    }
+  },
+  "scripts": {
+    "zenstack:generate": "zenstack generate --schema=./src/schema.zmodel --output=./src/generated",
+    "typegen": "supabase gen types --lang=typescript --local > ./supabase/database.types.ts",
+    "start": "supabase start --ignore-health-check",
+    "stop": "supabase stop",
+    "stop:backup": "supabase stop --backup",
+    "db:reset": "supabase db reset",
+    "db:diff": "supabase db diff",
+    "db:migration": "supabase migration new",
+    "db:md": "supabase db diff && supabase migration new"
+  },
+  "keywords": [],
+  "author": "jack",
+  "devDependencies": {
+    "@types/node": "^24.1.0",
+    "prisma": "6.13.0",
+    "supabase": "^1.183.5",
+    "zenstack": "^2.18.0"
+  },
+  "dependencies": {
+    "@prisma/adapter-pg": "6.13.0",
+    "@prisma/client": "6.13.0",
+    "@types/bun": "^1.0.5",
+    "@zenstackhq/runtime": "^2.18.0",
+    "nanoid": "^5.0.5"
+  }
+}

@@ -1,0 +1,9 @@
+**/node_modules
+**/dist/
+**/out/
+**/.next/
+**/.vscode
+**/.turbo
+**/build/
+npm-debug.log
+.env*

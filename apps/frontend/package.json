@@ -1,0 +1,49 @@
+{
+  "name": "@sample/frontend",
+  "version": "0.14.4",
+  "private": true,
+  "sideEffects": false,
+  "scripts": {
+    "dev": "next dev | pino-pretty",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "postbuild": "next-sitemap",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@sample/eslint-config-custom": "workspace:^",
+    "@evyweb/ioctopus": "^1.2.0",
+    "@next/bundle-analyzer": "^14.1.0",
+    "@next/third-parties": "^14.2.3",
+    "next": "14.2.25",
+    "next-sitemap": "^4.2.3",
+    "pino": "^8.18.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "server-only": "^0.0.1"
+  },
+  "devDependencies": {
+    "@sample/database": "workspace:^",
+    "@sample/tsconfig": "workspace:^",
+    "@types/cors": "^2.8.17",
+    "@types/eslint": "^8.56.2",
+    "@types/node": "20.11.16",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.1",
+    "autoprefixer": "^10.4.17",
+    "cors": "^2.8.5",
+    "eslint": "8.56.0",
+    "eslint-config-next": "14.1.0",
+    "eslint-config-prettier": "^9.1.0",
+    "pino-pretty": "10.3.1",
+    "postcss": "^8.4.33",
+    "prettier": "3.2.5",
+    "prettier-plugin-tailwindcss": "^0.5.11",
+    "tsx": "^4.7.1",
+    "typescript": "5.3.3"
+  },
+  "engines": {
+    "node": ">=18.17.0"
+  }
+}

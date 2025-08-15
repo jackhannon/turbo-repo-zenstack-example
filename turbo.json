@@ -1,0 +1,33 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "ui": "stream",
+  "tasks": {
+    "build": {
+      "env": [
+        "SENTRY_AUTH_TOKEN",
+        "ENVIRONMENT",
+        "AZURE_STORAGE_URL",
+        "SENTRY_ENVIRONMENT",
+        "AUTH0_SECRET",
+        "AUTH0_DOMAIN",
+        "AUTH0_CLIENT_ID",
+        "AUTH0_CLIENT_SECRET",
+        "DATABASE_URL"
+      ],
+      "dependsOn": ["^build", "prisma:generate"]
+    },
+    "prisma:generate": {
+      "env": ["DATABASE_URL"],
+      "cache": false
+    },
+    "test": {
+      "outputs": ["coverage/**"],
+      "dependsOn": ["build"],
+      "inputs": ["src/**/*.tsx", "src/**/*.ts", "test/**/*.ts"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "extends": "../../packages/tsconfig/nextjs.json",
+  "compilerOptions": {
+    // two lines required to supress "The inferred type of X cannot be named without a reference to @types/react" error
+    "declaration": false,
+    "declarationMap": false,
+    "baseUrl": ".",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "~/*": ["./src/*"],
+      "@sample/database/access/*": ["../../packages/database/src/access/*"]
+    },
+    "strictNullChecks": true,
+    "sourceMap": true
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+  ],
+  "exclude": ["node_modules"]
+}

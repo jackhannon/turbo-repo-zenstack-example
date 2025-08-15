@@ -1,0 +1,34 @@
+{
+  "name": "sample",
+  "version": "0.0.0",
+  "private": true,
+  "packageManager": "pnpm@9.5.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "dev:frontend": "turbo run dev --filter=@sample/frontend",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "cset:run": "changeset",
+    "cset:version": "changeset version && pnpm install",
+    "cset": "pnpm cset:run && pnpm cset:version",
+    "publish": "pnpm cset:publish",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@changesets/changelog-github": "^0.5.0",
+    "@changesets/cli": "^2.27.9",
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "husky": "8.0.3",
+    "prettier": "^3.0.3",
+    "turbo": "2.5.5",
+    "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "dotenv-cli": "^7.2.1"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "extends": "../tsconfig/base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "target": "ES2022",
+    "emitDeclarationOnly": false,
+    "outDir": "dist",
+    "declaration": true,
+    "declarationMap": true,
+    "composite": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "paths": {
+      "@sample/database": ["./src/index.ts"],
+      "@sample/database/*": ["./src/*"],
+      "~/*": ["./src/*"]
+    }
+  },
+  "include": ["src/**/*", "supabase/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
+}
